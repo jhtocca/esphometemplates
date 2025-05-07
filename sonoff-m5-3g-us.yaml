@@ -38,7 +38,7 @@
 
 substitutions:
   # User-required substitutions
-  device_site: "Casatorta"
+  device_site: "casatorta"
   device_location_code: "quarto-visita"
   device_location_name: "Quarto"
   device_type_code: "switch"
