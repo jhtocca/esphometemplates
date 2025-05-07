@@ -30,7 +30,7 @@
 # 
 # packages:
 #   base_package:
-#     url: https://github.com/mariodivece/esphometemplates/
+#     url: https://github.com/jhtocca/esphometemplates/
 #     ref: main
 #     file: sonoff-m5-3g-us.yaml
 #     refresh: 0d
@@ -50,7 +50,7 @@ substitutions:
   device_model: "Switchman M5 (3-Gang)"
   device_make: "Sonoff"
   package_version: "2024.2.13"
-  package_url: "github://mariodivece/esphometemplates/sonoff-m5-3g-us.yaml@main"
+  package_url: "github://jhtocca/esphometemplates/sonoff-m5-3g-us.yaml@main"
 
   # Relay Configurations
   relay_a_gpio: GPIO23
@@ -70,7 +70,7 @@ dashboard_import:
 # Import packages
 packages:
   standard_package:
-    url: https://github.com/mariodivece/esphometemplates/
+    url: https://github.com/jhtocca/esphometemplates/
     ref: main
     refresh: 0d
     files:
@@ -79,7 +79,7 @@ packages:
       - standard/wifi.yaml
       - standard/internaltemp.yaml
   sonoffm5_package:
-    url: https://github.com/mariodivece/esphometemplates/
+    url: https://github.com/jhtocca/esphometemplates/
     ref: main
     refresh: 0d
     files:
