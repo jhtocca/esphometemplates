@@ -38,7 +38,11 @@ wifi:
   power_save_mode: none
   ssid: "${wifi_ssid}"
   password: "${wifi_password}"
-  use_address: "${device_ip}"
+#  use_address: "${device_ip}"
+  manual_ip:
+    static_ip: 192.168.30.38
+    gateway: 192.168.30.1
+    subnet: 255.255.255.0  
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   # password for hostspot is the same as password for net AP (needs captive_portal)
