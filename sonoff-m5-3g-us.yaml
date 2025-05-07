@@ -98,6 +98,17 @@ packages:
       - sonoff-m5/button-c.yaml
 
 binary_sensor:
+### fix instability setting GPIO 16 (travava, botao 3 parava de responder, etc.)
+### fonte: https://github.com/esphome/issues/issues/5085
+  - platform: gpio
+    id: fixgpio
+    pin: 
+      number: 16
+      mode: 
+        input: True
+        pullup: True
+
+####
   # Buttn A
   - id: !extend button_a
     on_press:
