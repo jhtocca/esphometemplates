@@ -38,12 +38,12 @@
 
 substitutions:
   # User-required substitutions
-  device_site: "home"
-  device_location_code: "bedroom01"
-  device_location_name: "Bedroom 1"
-  device_type_code: "wasw"
-  device_type_name: "Wall Switch"
-  device_number: "044"
+  device_site: "Casatorta"
+  device_location_code: "quarto-visita"
+  device_location_name: "Quarto"
+  device_type_code: "switch"
+  device_type_name: "Interruptor"
+  device_number: "01"
   device_ip: "0.0.0.0"
 
   # Project Substitutions (not intended for user substitution)
