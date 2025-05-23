@@ -111,7 +111,7 @@ binary_sensor:
         pullup: True
 
 ####
-  # Buttn A
+  # Button A
   - id: !extend button_a
     on_press:
       # Latching
