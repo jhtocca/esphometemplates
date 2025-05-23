@@ -1,0 +1,8 @@
+##### Controle de luz por BLE 
+##### fonte: https://github.com/aronsky/esphome-components
+external_components:
+- source:
+    url: https://github.com/aronsky/esphome-components.git
+    type: git
+  components: all
+  refresh: 1d
