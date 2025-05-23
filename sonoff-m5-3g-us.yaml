@@ -96,6 +96,8 @@ packages:
       - sonoff-m5/button-a.yaml
       - sonoff-m5/button-b.yaml
       - sonoff-m5/button-c.yaml
+      #- sonoff-m5/ble-adv-controller.yaml
+      #- sonoff-m5/ble-proxy.yaml
 
 binary_sensor:
 ### fix instability setting GPIO 16 (travava, botao 3 parava de responder, etc.)
