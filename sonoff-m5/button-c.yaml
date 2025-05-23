@@ -56,6 +56,5 @@ binary_sensor:
                     data:
                       button: C
                       gesture: button_hold
-                - light.turn_off: led_status
                 - delay: ${timing_hold_repeat}
-          #- light.turn_off: led_status
+          - light.turn_off: led_status
