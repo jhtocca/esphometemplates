@@ -19,7 +19,7 @@ substitutions:
   timing_double_click_4: OFF for at least 250ms
 
   # Button Hold Timings
-  timing_hold: ON for at least 1s
+  timing_hold: ON for at least 2s
   timing_hold_repeat: 10000ms
 
   # Pulse Switch
