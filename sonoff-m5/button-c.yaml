@@ -3,10 +3,15 @@
 # are hereby referenced to be defined by its parent.
 
 binary_sensor:
-  #### C hold 513
+  #### C hold
   - platform: template
-    name: "C Hold"
-    id: c_hold
+    name: "Hold C"
+    id: hold_c
+    publish_initial_state: true
+  #### C double click  
+  - platform: template
+    name: "Double C"
+    id: double_c
     publish_initial_state: true
 
   ###
@@ -43,11 +48,19 @@ binary_sensor:
           - ${timing_double_click_3}
           - ${timing_double_click_4}
         then:
+          ### Double C
+          - binary_sensor.template.publish:
+              id: double_c
+              state: ON
           - homeassistant.event:
               event: esphome.on_gesture
               data:
                 button: C
                 gesture: double_click
+          - delay: 200ms
+          - binary_sensor.template.publish:
+              id: double_c
+              state: OFF
 
       # hold detection
       - timing:
@@ -60,7 +73,7 @@ binary_sensor:
                 - light.toggle: led_status
                 ### C Hold
                 - binary_sensor.template.publish:
-                    id: c_hold
+                    id: hold_c
                     state: ON
                 ###
                 - homeassistant.event:
@@ -70,6 +83,6 @@ binary_sensor:
                       gesture: button_hold
                 - delay: ${timing_hold_repeat}
           - binary_sensor.template.publish:
-              id: c_hold
+              id: hold_c
               state: OFF
           - light.turn_off: led_status
