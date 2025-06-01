@@ -7,6 +7,8 @@ binary_sensor:
   - platform: template
     name: "C Hold"
     id: c_hold
+    publish_initial_state: true
+
   ###
   # Physical Button C
   - platform: gpio
