@@ -7,11 +7,6 @@ binary_sensor:
   - platform: template
     name: "C Hold"
     id: c_hold
-    on_release:
-      - binary_sensor.template.publish:
-          id: c_hold
-          state: OFF
-
   ###
   # Physical Button C
   - platform: gpio
@@ -72,4 +67,7 @@ binary_sensor:
                       button: C
                       gesture: button_hold
                 - delay: ${timing_hold_repeat}
+          - binary_sensor.template.publish:
+              id: c_hold
+              state: OFF
           - light.turn_off: led_status
