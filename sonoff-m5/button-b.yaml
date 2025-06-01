@@ -47,11 +47,12 @@ binary_sensor:
           - ${timing_double_click_2}
           - ${timing_double_click_3}
           - ${timing_double_click_4}
+
+        then:
           ### Double b
           - binary_sensor.template.publish:
               id: double_b
               state: ON
-        then:
           - homeassistant.event:
               event: esphome.on_gesture
               data:
