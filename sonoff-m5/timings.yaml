@@ -20,7 +20,7 @@ substitutions:
 
   # Button Hold Timings
   timing_hold: ON for at least 2s
-  timing_hold_repeat: 10000ms
+  timing_hold_repeat: 2s
 
   # Pulse Switch
   timing_pulse: 250ms
