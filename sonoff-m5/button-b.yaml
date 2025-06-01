@@ -3,6 +3,18 @@
 # are hereby referenced to be defined by its parent.
 
 binary_sensor:
+  #### B hold
+  - platform: template
+    name: "Hold B"
+    id: hold_b
+    publish_initial_state: true
+  #### B double click  
+  - platform: template
+    name: "Double B"
+    id: double_b
+    publish_initial_state: true
+
+  ###
   # Physical Button B
   - platform: gpio
     name: "Button B"
@@ -35,12 +47,20 @@ binary_sensor:
           - ${timing_double_click_2}
           - ${timing_double_click_3}
           - ${timing_double_click_4}
+          ### Double b
+          - binary_sensor.template.publish:
+              id: double_b
+              state: ON
         then:
           - homeassistant.event:
               event: esphome.on_gesture
               data:
                 button: B
                 gesture: double_click
+          - delay: 500ms
+          - binary_sensor.template.publish:
+              id: double_b
+              state: OFF
 
       # hold detection
       - timing:
@@ -51,10 +71,18 @@ binary_sensor:
                 binary_sensor.is_on: button_b
               then:
                 - light.toggle: led_status
+                ### B Hold
+                - binary_sensor.template.publish:
+                    id: hold_b
+                    state: ON
+                ###
                 - homeassistant.event:
                     event: esphome.on_gesture
                     data:
                       button: B
                       gesture: button_hold
                 - delay: ${timing_hold_repeat}
+          - binary_sensor.template.publish:
+              id: hold_b
+              state: OFF
           - light.turn_off: led_status
