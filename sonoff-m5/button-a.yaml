@@ -50,7 +50,7 @@ binary_sensor:
         then:
           ### Double A
           - binary_sensor.template.publish:
-              id: double_A
+              id: double_a
               state: ON
           - homeassistant.event:
               event: esphome.on_gesture
