@@ -3,8 +3,18 @@
 # are hereby referenced to be defined by its parent.
 
 binary_sensor:
+  #### C hold 513
+    - platform: template
+    name: "C Hold"
+    id: c_hold
+    on_release:
+      - binary_sensor.template.publish:
+          id: c_hold
+          state: OFF
+
+  ###
   # Physical Button C
-  - platform: gpio
+    - platform: gpio
     name: "Button C"
     id: button_c
     pin:
@@ -51,6 +61,11 @@ binary_sensor:
                 binary_sensor.is_on: button_c
               then:
                 - light.toggle: led_status
+                ### C Hold
+                - binary_sensor.template.publish:
+                    id: c_hold
+                    state: ON
+                ###
                 - homeassistant.event:
                     event: esphome.on_gesture
                     data:
